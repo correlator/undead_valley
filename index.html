@@ -54,7 +54,10 @@
           const password = document.getElementById('password').value;
           if (password === 'password') {
               document.getElementById('hiddenSection').classList.remove('d-none');
-		  document.getElementById('hiddenSection').scrollIntoView({behavior: 'smooth'})
+	      window.scrollBy({ 
+                top: 250, // could be negative value
+		behavior: 'smooth' 
+	  });
           } else {
               alert("Incorrect password");
           }
