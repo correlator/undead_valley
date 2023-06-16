@@ -11,16 +11,21 @@
 
   </head>
 
-  <body style="background: url('images/background_image.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+  <body>
+    <video autoplay loop muted style="position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -100; transform: translate(-50%, -50%); object-fit: cover;">
+      <source src="video/hero_background.mov" type="video/mp4">
+    </video>
     <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
       <div class="container vh-100 d-flex flex-column justify-content-center align-items-center text-white">
-        <h1>Undead Valley</h1>
-        <form id="passwordForm">
-          <div class="mb-3">
-            <label for="password" class="form-label">Enter Password</label>
-            <input type="password" class="form-control" id="password">
-          </div>
-        </form>
+	<div class="card" style="background-color: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 20px;">
+          <h1 class="text-center">Undead Valley</h1>
+          <form id="passwordForm">
+            <div class="mb-3">
+              <label for="password" class="form-label">Enter Password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+          </form>
+	</div>
       </div>
     </div>
     <div class="container d-none" id="hiddenSection" style="margin-bottom:150px;">
@@ -30,7 +35,8 @@
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Without You
-	      <audio id="song1" src="audio/wihtout_you_2_james.mp3" controls></audio>
+	      <audio id="song1" src="audio/wihtout_you_2_james.mp3" controls class="d-none"></audio>
+              <span class="badge badge-primary badge-pill bg-primary" id="without-you"><i class="fa fa-play"></i></span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Song 2
@@ -52,7 +58,7 @@
       document.getElementById('passwordForm').addEventListener('submit', function(event) {
           event.preventDefault();
           const password = document.getElementById('password').value;
-          if (password === 'password') {
+          if (password === '444528') {
               document.getElementById('hiddenSection').classList.remove('d-none');
 	      window.scrollBy({ 
                 top: 300, // could be negative value
